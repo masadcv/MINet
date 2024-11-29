@@ -157,7 +157,7 @@ class SR_Branch(nn.Module):
             common.Upsampler(conv, scale, n_feats, act=False),
             conv(n_feats,n_feats, kernel_size)]#n_colors
 
-        self.add_mean = common.MeanShift(rgb_range, rgb_mean, rgb_std, 1)
+        # self.add_mean = common.MeanShift(rgb_range, rgb_mean, rgb_std, 1)
 
         self.head = nn.Sequential(*modules_head)
         self.body = nn.Sequential(*modules_body)
