@@ -314,8 +314,8 @@ class MINet(nn.Module):
         out1T1 = resT1   
         out1T2 = resT2
 
-        ts = t1s + t2s
-        ts = torch.cat(ts,dim=1)
+        ts = torch.cat(t1s, dim=1) + torch.cat(t2s, dim=1)
+        # ts = torch.cat(ts,dim=1)
         res1_T2 = self.net2.la(ts)
         out2_T2 = self.net2.last_conv(res1_T2)
 
